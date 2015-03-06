@@ -30,8 +30,8 @@ public class Verify extends HttpServlet {
             String userName = request.getParameter("email");
             String userPass = request.getParameter("password");
             System.out.println(userName+"  "+userPass);
-            Class.forName("oracle.jdbc.OracleDriver");
-            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "kumar", "kumar");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             Statement s;
             ResultSet rs;
             String pass=null;

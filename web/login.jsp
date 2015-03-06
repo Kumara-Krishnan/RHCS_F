@@ -59,7 +59,7 @@
   </div>
            
 </div>
-        <form class="form-horizontal" style="width: 50%" action="Verify.do">
+        <form class="form-horizontal" style="width: 50%" action="Verify.do" method="POST">
   <fieldset>
     <legend>Login</legend>
     <div class="form-group">
