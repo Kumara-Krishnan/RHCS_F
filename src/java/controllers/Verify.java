@@ -36,7 +36,7 @@ public class Verify extends HttpServlet {
             ResultSet rs;
             String pass=null;
             s=con.createStatement();
-            rs=s.executeQuery("select password from login where email='"+userName+"'");
+            rs=s.executeQuery("select password from login where email='"+userName+"';");
             while(rs.next()){
                 pass=rs.getString("password");
                 System.out.println(pass);
@@ -54,20 +54,19 @@ public class Verify extends HttpServlet {
                 request.getRequestDispatcher("Home.jsp").forward(request, response);
             } else {
                 //forward to login
-                out.println("<b>Username or password incorrect</b>");
-                request.getRequestDispatcher("login.jsp").include(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
-        catch (SQLException ex) {
+        catch (Exception ex) {
             PrintWriter out=response.getWriter();
-            out.println(ex);
-        } catch (ClassNotFoundException ex) {
+            out.println(ex+"  "+ex.getMessage());
+        } /*catch (ClassNotFoundException ex) {
             Logger.getLogger(Verify.class.getName()).log(Level.SEVERE, null, ex);
         }
         catch(Exception e){
             PrintWriter out=response.getWriter();
             out.println(e);
-        }
+        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
