@@ -31,7 +31,7 @@ public class Verify extends HttpServlet {
             String userPass = request.getParameter("password");
             System.out.println(userName+"  "+userPass);
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
+            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             Statement s;
             ResultSet rs;
             String pass=null;
@@ -57,11 +57,16 @@ public class Verify extends HttpServlet {
                 out.println("<b>Username or password incorrect</b>");
                 request.getRequestDispatcher("login.jsp").include(request, response);
             }
-        } 
+        }
         catch (SQLException ex) {
-            System.out.println(ex);
+            PrintWriter out=response.getWriter();
+            out.println(ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Verify.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch(Exception e){
+            PrintWriter out=response.getWriter();
+            out.println(e);
         }
     }
 
