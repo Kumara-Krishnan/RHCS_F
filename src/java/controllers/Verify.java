@@ -22,23 +22,23 @@ import javax.servlet.http.HttpSession;
  * @author Kumara Krishnan
  */
 public class Verify extends HttpServlet {
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            PrintWriter out=response.getWriter();
+            PrintWriter out = response.getWriter();
             String userName = request.getParameter("email");
             String userPass = request.getParameter("password");
-            System.out.println(userName+"  "+userPass);
+            System.out.println(userName + "  " + userPass);
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             Statement s;
             ResultSet rs;
-            String pass=null;
-            s=con.createStatement();
-            rs=s.executeQuery("select password from login where email='"+userName+"';");
-            while(rs.next()){
-                pass=rs.getString("password");
+            String pass = null;
+            s = con.createStatement();
+            rs = s.executeQuery("select password from login where email='" + userName + "';");
+            while (rs.next()) {
+                pass = rs.getString("password");
                 System.out.println(pass);
             }
             System.out.println(rs);
@@ -56,17 +56,17 @@ public class Verify extends HttpServlet {
                 //forward to login
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        }
-        catch (Exception ex) {
-            PrintWriter out=response.getWriter();
-            out.println(ex+"  "+ex.getMessage());
+        } catch (Exception ex) {
+            PrintWriter out = response.getWriter();
+            out.println(ex + "  " + ex.getMessage());
         } /*catch (ClassNotFoundException ex) {
-            Logger.getLogger(Verify.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch(Exception e){
-            PrintWriter out=response.getWriter();
-            out.println(e);
-        }*/
+         Logger.getLogger(Verify.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         catch(Exception e){
+         PrintWriter out=response.getWriter();
+         out.println(e);
+         }*/
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

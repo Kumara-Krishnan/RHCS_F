@@ -24,24 +24,24 @@ public class Register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            PrintWriter out=response.getWriter();
-            String name=request.getParameter("name");
-            int age=Integer.parseInt(request.getParameter("age"));
-            String sex=request.getParameter("sex");
-            String bloodgrp=request.getParameter("bloodgrp");
-            int bp=Integer.parseInt(request.getParameter("bp"));
-            int sugar=Integer.parseInt(request.getParameter("sugar"));
-            int height= Integer.parseInt(request.getParameter("height"));
-            int weight= Integer.parseInt(request.getParameter("weight"));
-            long phone= Long.parseLong(request.getParameter("phone"));
-            String address=request.getParameter("address");
-            String email=request.getParameter("email");
-            String password=request.getParameter("password");
-            System.out.println(name+"  "+age+"  "+sex+"  "+bloodgrp+"  "+bp+"  "+sugar+"  "+height+"  "+weight+"  "+phone+"  "+email+"  "+password);
+            PrintWriter out = response.getWriter();
+            String name = request.getParameter("name");
+            int age = Integer.parseInt(request.getParameter("age"));
+            String sex = request.getParameter("sex");
+            String bloodgrp = request.getParameter("bloodgrp");
+            int bp = Integer.parseInt(request.getParameter("bp"));
+            int sugar = Integer.parseInt(request.getParameter("sugar"));
+            int height = Integer.parseInt(request.getParameter("height"));
+            int weight = Integer.parseInt(request.getParameter("weight"));
+            long phone = Long.parseLong(request.getParameter("phone"));
+            String address = request.getParameter("address");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            System.out.println(name + "  " + age + "  " + sex + "  " + bloodgrp + "  " + bp + "  " + sugar + "  " + height + "  " + weight + "  " + phone + "  " + email + "  " + password);
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             PreparedStatement s;
-            s=con.prepareStatement("insert into registration values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            s = con.prepareStatement("insert into registration values(?,?,?,?,?,?,?,?,?,?,?,?)");
             s.setString(1, email);
             s.setString(2, name);
             s.setInt(3, age);
@@ -55,13 +55,12 @@ public class Register extends HttpServlet {
             s.setString(11, password);
             s.setString(12, address);
             s.executeUpdate();
-            s=con.prepareStatement("insert into login values(?,?)");
+            s = con.prepareStatement("insert into login values(?,?)");
             s.setString(1, email);
             s.setString(2, password);
             s.executeUpdate();
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             request.getRequestDispatcher("Reg.jsp").forward(request, response);
         }

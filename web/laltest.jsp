@@ -19,7 +19,43 @@
         <title>Home</title>
     </head>
     <body>
+        <!-- Live Chat -->
 
+        <script type="text/javascript" defer="defer" src="https://mylivechat.com/chatinline.aspx?hccid=15109069"></script>
+        <!-- Live Chat -->
+        <!-- Facebook Script -->
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '340049302862934',
+                    xfbml: true,
+                    version: 'v2.2'
+                });
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- Facebook Script -->
 
         <div class="navbar navbar-inverse">
             <div class="navbar-header">
@@ -65,6 +101,17 @@
                     <p><strong><em>It has become appallingly obvious that our technology has exceeded our humanity.</em></strong></p>
                     <small>Albert Einstein<cite title="Source Title"> on Technological Advancements</cite></small>
                 </blockquote>
+                <!-- Facebook -->
+                <div
+                    class="fb-like"
+                    data-share="true"
+                    data-width="450"
+                    data-show-faces="true">
+                </div>
+
+                <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="5" data-colorscheme="light"></div>
+                <div class="fb-like-box" data-href="https://www.facebook.com/landsandlands" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                <!-- Facebook -->
                 <p id="demo">Click the button to get your position:</p>
 
                 <p><a  class="btn btn-primary btn-lg">Start</a>
@@ -74,7 +121,6 @@
 
                 <script>
                     var x = document.getElementById("demo");
-
                     function getLocation() {
                         if (navigator.geolocation) {
                             navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -82,15 +128,12 @@
                             x.innerHTML = "Geolocation is not supported by this browser.";
                         }
                     }
-
                     function showPosition(position) {
                         var latlon = position.coords.latitude + "," + position.coords.longitude;
-
                         var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
                                 + latlon + "&zoom=14&size=400x300&sensor=false";
                         document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
                     }
-
                     function showError(error) {
                         switch (error.code) {
                             case error.PERMISSION_DENIED:
@@ -131,16 +174,16 @@
         <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
         <script>
-                    $(document).ready(function () {
-                        $("a.dropdown-toggle").click(function (ev) {
-                            $("a.dropdown-toggle").dropdown("toggle");
-                            return false;
-                        });
-                        $("ul.dropdown-menu a").click(function (ev) {
-                            $("a.dropdown-toggle").dropdown("toggle");
-                            return false;
-                        });
-                    });
+        $(document).ready(function () {
+            $("a.dropdown-toggle").click(function (ev) {
+                $("a.dropdown-toggle").dropdown("toggle");
+                return false;
+            });
+            $("ul.dropdown-menu a").click(function (ev) {
+                $("a.dropdown-toggle").dropdown("toggle");
+                return false;
+            });
+        });
         </script>  
     </body>
 </html>
