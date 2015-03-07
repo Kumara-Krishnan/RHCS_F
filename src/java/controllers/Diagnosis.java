@@ -68,8 +68,8 @@ public class Diagnosis extends HttpServlet {
                     b[i]=1.0;
                 }
             }
-            Class.forName("oracle.jdbc.OracleDriver");
-            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "kumar", "kumar");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             PreparedStatement s;
             s=con.prepareStatement("insert into userinput values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             for(int i=0;i<a.length;i++){

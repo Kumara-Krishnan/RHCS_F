@@ -23,7 +23,7 @@ public class Array{
      public static final double TRAIN_INPUT [][]=new double [6][18];
      public static final double TRAIN_IDEAL [][]=new double [6][1];
      int i=0,j=0;
-     public void addDisease(){
+     /*public void addDisease(){
            try{
        String host="jdbc:derby://localhost:1527/sample";
        String uname="app";
@@ -39,11 +39,11 @@ public class Array{
 catch(SQLException err){
     System.out.println(err.getMessage());
 }
-     }
+     }*/
      public  void get(){
           try{
-       Class.forName("oracle.jdbc.OracleDriver");
-            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "kumar", "kumar");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             Statement s;
             ResultSet rs;
             String pass=null;

@@ -38,8 +38,8 @@ public class Register extends HttpServlet {
             String email=request.getParameter("email");
             String password=request.getParameter("password");
             System.out.println(name+"  "+age+"  "+sex+"  "+bloodgrp+"  "+bp+"  "+sugar+"  "+height+"  "+weight+"  "+phone+"  "+email+"  "+password);
-            Class.forName("oracle.jdbc.OracleDriver");
-            Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "kumar", "kumar");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://127.11.163.130:3306/app", "adminBSfktw2", "D71pQxHI8nmP");
             PreparedStatement s;
             s=con.prepareStatement("insert into registration values(?,?,?,?,?,?,?,?,?,?,?,?)");
             s.setString(1, name);
