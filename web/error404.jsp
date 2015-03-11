@@ -57,7 +57,7 @@
 
         </div>
         <fieldset>
-            <legend>Oops :( Something went wrong... Try again some other time...</legend>
+            <legend>Oops :( That's a 404... Try some other page...</legend>
         </fieldset>
 
 
