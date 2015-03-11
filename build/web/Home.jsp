@@ -4,6 +4,7 @@
     Author     : Kabilan
 --%>
 
+<%@page errorPage="errorpage.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     session = request.getSession(false);
@@ -59,7 +60,7 @@
                 
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left" action="LogOut.do">
-                        <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Log Out</button>
+                        <input type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" value="Log Out"/>
 
                     </form>
 
