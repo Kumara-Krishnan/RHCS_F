@@ -5,26 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%
-    session = request.getSession(false);
-    if (session == null) {
-        //request.getRequestDispatcher("login.jsp").forward(request, response);
-        return;
-    }
-    String status = (String) session.getAttribute("status");
-    if (status == null || !status.equals("valid")) {
-        //request.getRequestDispatcher("login.jsp").forward(request, response);
-        return;
-    }
-    else{
-        request.getRequestDispatcher("Home.jsp").forward(request, response);
-        return;
-    }
-%>
-
-%>
-
 <!DOCTYPE html>
 <html>
     <head>
