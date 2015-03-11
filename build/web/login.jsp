@@ -5,6 +5,19 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    session = request.getSession(false);
+    if (session != null) {
+        String status = (String) session.getAttribute("status");
+        if (status.equals("valid")) {
+            request.getRequestDispatcher("Home.jsp").forward(request, response);
+            return;
+        }
+    }
+
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,10 +54,6 @@
                 </form>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <form class="navbar-form navbar-left">
-                        <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Log Out</button>
-
-                    </form>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">

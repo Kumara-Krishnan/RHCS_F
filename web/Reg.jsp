@@ -5,6 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    session = request.getSession(false);
+    if (session == null) {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+    String status = (String) session.getAttribute("status");
+    if (status == null || !status.equals("valid")) {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,13 +54,6 @@
                     <input type="text" class="form-control col-lg-8" placeholder="Search">
                 </form>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <form class="navbar-form navbar-left">
-                        <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Log Out</button>
-
-                    </form>
-
-                </ul>
             </div>
         </div>
 

@@ -5,6 +5,20 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    session = request.getSession(false);
+    if (session == null) {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+    String status = (String) session.getAttribute("status");
+    if (status == null || !status.equals("valid")) {
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+%>
+
 <!DOCTYPE html>
 
 <head>
@@ -46,7 +60,7 @@
         </form>
 
         <ul class="nav navbar-nav navbar-right">
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" action="LogOut.do">
                 <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">Log Out</button>
 
             </form>
