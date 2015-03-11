@@ -30,7 +30,7 @@
         <script src="rescources/js/bootswatch.js" type="text/javascript"></script>
         <script src="rescources/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
+        <title>RHCS-Home</title>
     </head>
     <body>
 

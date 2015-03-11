@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="rescources/css/bootstrap.css" type="text/css"/>
         <link href="rescources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
+        <title>Login</title>
     </head>
     <body>
 
