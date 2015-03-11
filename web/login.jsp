@@ -8,13 +8,20 @@
 
 <%
     session = request.getSession(false);
-    if (session != null) {
-        String status = (String) session.getAttribute("status");
-        if (status.equals("valid")) {
-            request.getRequestDispatcher("Home.jsp").forward(request, response);
-            return;
-        }
+    if (session == null) {
+        //request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
     }
+    String status = (String) session.getAttribute("status");
+    if (status == null || !status.equals("valid")) {
+        //request.getRequestDispatcher("login.jsp").forward(request, response);
+        return;
+    }
+    else{
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
+        return;
+    }
+%>
 
 %>
 
