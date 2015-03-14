@@ -31,6 +31,23 @@
         <script src="rescources/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>RHCS-Home</title>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-60757234-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
     </head>
     <body>
 
@@ -57,7 +74,7 @@
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" value="${param.email}" placeholder="Search">
                 </form>
-                
+
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left" action="LogOut.do">
                         <input type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" value="Log Out"/>
