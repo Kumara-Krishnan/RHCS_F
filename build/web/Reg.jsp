@@ -49,19 +49,19 @@
 
 
 
-        <form class="form-horizontal" style="width: 50%" action="Register.do">
+        <form class="form-horizontal" id="commentForm" style="width: 50%" action="Register.do">
             <fieldset>
                 <legend>Registration Form</legend>
                 <div class="form-group">
                     <label for="inputName" class="col-lg-2 control-label">Name</label>
                     <div class="col-lg-10">
-                        <input type="text" name="name" value="${param.name}" class="form-control" id="inputName" placeholder="Name">
+                        <input type="text" name="name" value="${param.name}" class="form-control" id="cname" minlength="2" required="true" placeholder="Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAge" class="col-lg-2 control-label">Age</label>
                     <div class="col-lg-10">
-                        <input type="text" name="age" value="${param.age}" class="form-control" id="inputAge" placeholder="Age">
+                        <input type="text" name="age" value="${param.age}" class="form-control" id="inputAge" required="true" placeholder="Age">
                     </div>
                 </div>
                 <div class="form-group">
@@ -120,7 +120,7 @@
                 <div class="form-group">
                     <label for="inputuname" class="col-lg-2 control-label">User I.D</label>
                     <div class="col-lg-10">
-                        <input type="email" name="email" value="${param.email}" class="form-control"id="userId" placeholder="example@abc.com">
+                        <input type="email" name="email" value="${param.email}" class="form-control" id="cemail" required="true" placeholder="example@abc.com">
                     </div>
                 </div>
                 <div class="form-group">
@@ -162,6 +162,7 @@
 
 
         <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="rescources/js/jquery.validate.js" type="text/javascript"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
         <script>
             $(document).ready(function () {
@@ -175,5 +176,88 @@
                 });
             });
         </script>  
+
+        <script>
+            $.validator.setDefaults({
+                submitHandler: function () {
+                    alert("submitted!");
+                }
+            });
+
+            $().ready(function () {
+                // validate the comment form when it is submitted
+                $("#commentForm").validate();
+
+                // validate signup form on keyup and submit
+                $("#signupForm").validate({
+                    rules: {
+                        firstname: "required",
+                        lastname: "required",
+                        username: {
+                            required: true,
+                            minlength: 2
+                        },
+                        password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        confirm_password: {
+                            required: true,
+                            minlength: 5,
+                            equalTo: "#password"
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        topic: {
+                            required: "#newsletter:checked",
+                            minlength: 2
+                        },
+                        agree: "required"
+                    },
+                    messages: {
+                        firstname: "Please enter your firstname",
+                        lastname: "Please enter your lastname",
+                        username: {
+                            required: "Please enter a username",
+                            minlength: "Your username must consist of at least 2 characters"
+                        },
+                        password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long"
+                        },
+                        confirm_password: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 5 characters long",
+                            equalTo: "Please enter the same password as above"
+                        },
+                        email: "Please enter a valid email address",
+                        agree: "Please accept our policy"
+                    }
+                });
+
+                // propose username by combining first- and lastname
+                $("#username").focus(function () {
+                    var firstname = $("#firstname").val();
+                    var lastname = $("#lastname").val();
+                    if (firstname && lastname && !this.value) {
+                        this.value = firstname + "." + lastname;
+                    }
+                });
+
+                //code to hide topic selection, disable for demo
+                var newsletter = $("#newsletter");
+                // newsletter topics are optional, hide at first
+                var inital = newsletter.is(":checked");
+                var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
+                var topicInputs = topics.find("input").attr("disabled", !inital);
+                // show when newsletter is checked
+                newsletter.click(function () {
+                    topics[this.checked ? "removeClass" : "addClass"]("gray");
+                    topicInputs.attr("disabled", !this.checked);
+                });
+            });
+        </script>
     </body>
 </html>
