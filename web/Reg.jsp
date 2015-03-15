@@ -66,7 +66,7 @@
 
 
 
-        <form class="form-horizontal" id="commentForm" style="width: 50%" action="Register.do">
+        <form class="form-horizontal" id="commentForm" style="width: 50%" method="POST" action="Register.do">
             <fieldset>
                 <legend>Registration Form</legend>
                 <div class="form-group">
