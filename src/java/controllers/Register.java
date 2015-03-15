@@ -5,6 +5,8 @@
  */
 package controllers;
 
+import com.sendgrid.SendGrid;
+import com.sendgrid.SendGrid.Email;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -59,6 +61,14 @@ public class Register extends HttpServlet {
             s.setString(1, email);
             s.setString(2, password);
             s.executeUpdate();
+            SendGrid sendgrid = new SendGrid("rhcs", "5zm25gLaG");
+            Email mail = new Email();
+            mail.addTo(email);
+            mail.addToName(name);
+            mail.setFrom("kumarakrishnanps@gmail.com");
+            mail.setSubject("Registration Successful");
+            mail.setText("Thank You For registering in Rural Health Care System. Log in to use our services.");
+            sendgrid.send(mail);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
