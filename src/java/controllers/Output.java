@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kumara krishnan and Kabilan Senapathy
+ * @author kumara krishnan
  */
 public class Output extends NeuralNetwork {
 

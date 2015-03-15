@@ -1,9 +1,7 @@
 package controllers;
 
-import java.io.*;
 import com.heatonresearch.book.introneuralnet.neural.feedforward.FeedforwardLayer;
 import com.heatonresearch.book.introneuralnet.neural.activation.ActivationTANH;
-import com.heatonresearch.book.introneuralnet.neural.activation.ActivationLinear;
 import com.heatonresearch.book.introneuralnet.neural.feedforward.FeedforwardNetwork;
 import com.heatonresearch.book.introneuralnet.neural.feedforward.train.Train;
 import com.heatonresearch.book.introneuralnet.neural.feedforward.train.backpropagation.Backpropagation;
@@ -15,7 +13,7 @@ import java.util.Scanner;
  * backpropagation.
  *
  *
- * @author Kumara Krishnan and Kabilan Senapathy
+ * @author Kumara Krishnan
  */
 public class NeuralNetwork extends Array {
 
