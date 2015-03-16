@@ -58,9 +58,4 @@ public class Output extends NeuralNetwork {
         }
 
     }
-
-    public void Openpage(HttpServletResponse res) throws IOException {
-        // here type your JSP page that you want to open
-        res.sendRedirect("report.jsp");
-    }
 }

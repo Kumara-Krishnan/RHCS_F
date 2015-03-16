@@ -9,12 +9,12 @@
 <%
     session = request.getSession(false);
     if (session == null) {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
     String status = (String) session.getAttribute("status");
     if (status == null || !status.equals("valid")) {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
 %>

@@ -9,12 +9,12 @@
 <%
     session = request.getSession(false);
     if (session == null) {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
     String status = (String) session.getAttribute("status");
     if (status == null || !status.equals("valid")) {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
 %>
@@ -65,12 +65,12 @@
     <div class="navbar-collapse collapse navbar-inverse-collapse">
         <ul class="nav navbar-nav">
             <li><a  href="Home.jsp">Home</a></li>
-            <li><a href="login.jsp">Login</a></li>
+            <li><a href="Login.jsp">Login</a></li>
             <li class="active" ><a href="Diag.jsp">Diagnosis</a></li>
-            <li><a href="#">Emergency</a></li>
+            <li><a href="Emergency.jsp">Emergency</a></li>
             <li><a href="Reg.jsp">Register</a></li>
-            <li><a href="announce.jsp">Announcements</a></li>
-            <li><a href="data.jsp">Data View</a></li>
+            <li><a href="Announcements.jsp">Announcements</a></li>
+            <li><a href="Data.jsp">Data View</a></li>
         </ul>
         <form class="navbar-form navbar-left">
             <input type="text" class="form-control col-lg-8" placeholder="Search">
