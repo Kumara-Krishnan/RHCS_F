@@ -47,7 +47,7 @@
             <div class="navbar-collapse collapse navbar-inverse-collapse">
                 <ul class="nav navbar-nav">
                     <li><a  href="Home.jsp">Home</a></li>
-                    <li class="active"><a href="login.jsp">Login</a></li>
+                    <li class="active"><a href="Login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
                     <li><a href="Emergency.jsp">Emergency</a></li>
                     <li><a href="Reg.jsp">Register</a></li>
