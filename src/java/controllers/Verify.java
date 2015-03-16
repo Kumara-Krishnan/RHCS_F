@@ -54,7 +54,7 @@ public class Verify extends HttpServlet {
                 request.getRequestDispatcher("Home.jsp").forward(request, response);
             } else {
                 //forward to login
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
         } catch (Exception ex) {
             PrintWriter out = response.getWriter();

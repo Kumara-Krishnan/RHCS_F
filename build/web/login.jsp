@@ -49,10 +49,10 @@
                     <li><a  href="Home.jsp">Home</a></li>
                     <li class="active"><a href="login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
-                    <li><a href="#">Emergency</a></li>
+                    <li><a href="Emergency.jsp">Emergency</a></li>
                     <li><a href="Reg.jsp">Register</a></li>
-                    <li><a href="announce.jsp">Announcements</a></li>
-                    <li><a href="data.jsp">Data View</a></li>
+                    <li><a href="Announcements.jsp">Announcements</a></li>
+                    <li><a href="Data.jsp">Data View</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" placeholder="Search">

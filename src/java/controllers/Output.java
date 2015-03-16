@@ -46,7 +46,7 @@ public class Output extends NeuralNetwork {
                     disease = rs.getString("name");
                     advice = rs.getString("advice");
                     System.out.println(disease + "   " + advice);
-                             //String s1="Update result set DISEASE='"+disease+"',ADVICE='"+advice+"' where A='a'";
+                    //String s1="Update result set DISEASE='"+disease+"',ADVICE='"+advice+"' where A='a'";
                     //Statement st=con.createStatement();
                     //int s2=st.executeUpdate(s1);
 
@@ -57,10 +57,5 @@ public class Output extends NeuralNetwork {
             System.out.println(err.getMessage());
         }
 
-    }
-
-    public void Openpage(HttpServletResponse res) throws IOException {
-        // here type your JSP page that you want to open
-        res.sendRedirect("report.jsp");
     }
 }
