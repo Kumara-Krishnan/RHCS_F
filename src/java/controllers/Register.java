@@ -69,7 +69,7 @@ public class Register extends HttpServlet {
             mail.setSubject("Registration Successful");
             mail.setText("Thank You For registering in Rural Health Care System. Log in to use our services.");
             sendgrid.send(mail);
-            request.getRequestDispatcher("Login.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
             request.getRequestDispatcher("Reg.jsp").forward(request, response);
