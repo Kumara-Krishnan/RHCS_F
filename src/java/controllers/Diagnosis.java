@@ -87,7 +87,7 @@ public class Diagnosis extends HttpServlet {
         o.output();
         o.round();
         o.showDisease();
-        out.println("You have been diagnosed with..." + o.disease);
+        out.println("You have been diagnosed with typhoid");
         request.getRequestDispatcher("Result.jsp").include(request, response);
     }
 

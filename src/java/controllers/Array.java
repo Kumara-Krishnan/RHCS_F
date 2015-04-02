@@ -15,11 +15,30 @@ import java.sql.Statement;
  */
 public class Array {
 
+    /**
+     *
+     */
     public static Statement stmt;
+
+    /**
+     *
+     */
     public static ResultSet rs;
+
+    /**
+     *
+     */
     public static Connection con;
     static int a;
+
+    /**
+     *
+     */
     public static final double TRAIN_INPUT[][] = new double[6][18];
+
+    /**
+     *
+     */
     public static final double TRAIN_IDEAL[][] = new double[6][1];
     int i = 0, j = 0;
     /*public void addDisease(){
@@ -40,6 +59,9 @@ public class Array {
      }
      }*/
 
+    /**
+     *
+     */
     public void get() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
