@@ -72,7 +72,7 @@
                     <li><a href="Data.jsp">Data View</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
-                    <input type="text" class="form-control col-lg-8" value="${param.email}" placeholder="Search">
+                    <input type="text" class="form-control col-lg-8" placeholder="Search">
                 </form>
 
                 <ul class="nav navbar-nav navbar-right">
