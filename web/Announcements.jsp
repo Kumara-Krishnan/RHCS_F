@@ -17,6 +17,14 @@
         request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
+    String email = "";
+    Cookie c[] = request.getCookies();
+    for (Cookie d : c) {
+        System.out.println(d.getName());
+        if (d.getName().equals("user")) {
+            email = d.getValue();
+        }
+    }
 %>
 
 <!DOCTYPE html>
@@ -63,7 +71,7 @@
                     <li><a href="Login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
                     <li><a href="Emergency.jsp">Emergency</a></li>
-                    <li><a href="Reg.jsp">Register</a></li>
+                    <li><a href="UserDetails.jsp"><%=email%></a></li>
                     <li class="active"><a href="Announcements.jsp">Announcements</a></li>
                     <li><a href="Data.jsp">Data View</a></li>
                 </ul>

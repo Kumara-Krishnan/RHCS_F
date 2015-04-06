@@ -17,6 +17,14 @@
         request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
+        String email = "";
+    Cookie c[] = request.getCookies();
+    for (Cookie d : c) {
+        System.out.println(d.getName());
+        if (d.getName().equals("user")) {
+            email = d.getValue();
+        }
+    }
 %>
 
 <!DOCTYPE html>

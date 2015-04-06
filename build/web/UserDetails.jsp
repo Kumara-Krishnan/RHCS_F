@@ -20,7 +20,6 @@
         request.getRequestDispatcher("Login.jsp").forward(request, response);
         return;
     }
-    Cookie c[] = request.getCookies();
     String name = "";
     int age = 0;
     int bp = 0;
@@ -30,13 +29,14 @@
     long phone = 0;
     String sex = "";
     String bloodgrp = "";
-    String email = "";
     String password = "";
     String address = "";
+    String email = "";
+    Cookie c[] = request.getCookies();
     for (Cookie d : c) {
         System.out.println(d.getName());
         if (d.getName().equals("user")) {
-            name = d.getValue();
+            email = d.getValue();
         }
     }
 
@@ -48,7 +48,7 @@
         ResultSet rs;
         String pass = null;
         s = con.createStatement();
-        rs = s.executeQuery("select * from registration where username='" + name + "';");
+        rs = s.executeQuery("select * from registration where email='" + email + "';");
         while (rs.next()) {
             email = rs.getString("email");
             name = rs.getString("name");
@@ -110,30 +110,35 @@
             <div class="navbar-collapse collapse navbar-inverse-collapse">
                 <ul class="nav navbar-nav">
                     <li ><a  href="Home.jsp">Home</a></li>
-                    <li><a href="Login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
                     <li><a href="Emergency.jsp">Emergency</a></li>
-                    <li class="active"><a href="UserDetails.jsp"><%=name%></a></li>
+                    <li class="active"><a href="UserDetails.jsp"><%=email%></a></li>
                     <li><a href="Announcements.jsp">Announcements</a></li>
                     <li><a href="Data.jsp">Data View</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" placeholder="Search">
                 </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" action="LogOut.do">
+                        <input type="submit" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" value="Log Out"/>
 
+                    </form>
+
+                </ul>
             </div>
         </div>
 
 
 
 
-        <form class="form-horizontal" id="commentForm" style="width: 50%" method="POST" action="Register.do">
+        <form class="form-horizontal" id="commentForm" style="width: 50%" method="POST" action="Update.do">
             <fieldset>
                 <legend>User Details</legend>
                 <div class="form-group">
                     <label for="inputName" class="col-lg-2 control-label">Name</label>
                     <div class="col-lg-10">
-                        <input type="text" name="name" value="<%=name%>" class="form-control" id="cname" minlength="2" required="true" placeholder="Name">
+                        <input type="text" name="name" disabled="true" value="<%=name%>" class="form-control" id="cname" minlength="2" required="true" placeholder="Name">
                     </div>
                 </div>
                 <div class="form-group">
@@ -145,7 +150,7 @@
                 <div class="form-group">
                     <label class="col-lg-2 control-label">Gender</label>
                     <div class="col-lg-10">
-                        <input type="text" name="sex" value="<%=sex%>" class="form-control" id="inputSex" required="true" placeholder="Sex">   
+                        <input type="text" name="sex" value="<%=sex%>" disabled="true" class="form-control" id="inputSex" required="true" placeholder="Sex">   
                     </div>
                 </div>
                 <div class="form-group">
@@ -187,7 +192,7 @@
                 <div class="form-group">
                     <label for="inputuname" class="col-lg-2 control-label">User I.D</label>
                     <div class="col-lg-10">
-                        <input type="email" name="email" value="<%=email%>" class="form-control" id="cemail" required="true" placeholder="example@abc.com">
+                        <input type="email" name="email" disabled="true" value="<%=email%>" class="form-control" id="cemail" required="true" placeholder="example@abc.com">
                     </div>
                 </div>
                 <div class="form-group">
@@ -208,7 +213,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
 
