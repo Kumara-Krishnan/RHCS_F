@@ -32,7 +32,7 @@ public class Diagnosis extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         PrintWriter out = response.getWriter();
         try {
             response.setContentType("text/html;charset=UTF-8");
@@ -91,6 +91,7 @@ public class Diagnosis extends HttpServlet {
         o.showDisease();
         Cookie c=new Cookie("dis",o.disease);
         Cookie d=new Cookie("adv",o.advice);
+        out.println("<b>"+o.disease+"</b>");
         response.addCookie(c);
         response.addCookie(d);
         request.getRequestDispatcher("Result.jsp").include(request, response);

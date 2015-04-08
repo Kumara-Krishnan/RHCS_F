@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Output extends NeuralNetwork {
 
     double val;
-    String disease, advice;
+    public static String disease, advice;
 
     public void output() {
         actual = network.computeOutputs(UserInput.USER_INPUT);

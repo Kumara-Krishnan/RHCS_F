@@ -4,6 +4,7 @@
     Author     : kumara krishnan
 --%>
 
+<%@page import="controllers.Output"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
@@ -122,7 +123,7 @@
         <div style="padding:5px;" class="jumbotron col-md-5 col-lg-offset-1">
         
             <h3>Diagnosis Result</h3>
-            <label><h3>You have been diagnosed with <%=disease%> <br>Contact a general physician for medical advice.</h3><br><a href="emergency.jsp"  class="btn btn-warning btn-lg">Emergency</a></label>
+            <label><h3>You have been diagnosed with <%=Output.disease%> <br>Contact a general physician for medical advice.</h3><br><a href="emergency.jsp"  class="btn btn-warning btn-lg">Emergency</a></label>
             <br><h2>Video Conference With Physician.</h2><br>  <button class="btn btn-success btn-lg" id="startButton">Start</button>
       <button class="btn btn-primary btn-lg" id="callButton">Call</button>
       <button class="btn btn-danger btn-lg" id="hangupButton">Hang Up</button><br>
@@ -143,7 +144,7 @@
                 </ul>
                Recommended Medication
                 <ul>
-                    <li><%=advice%></li>
+                    <li><%=Output.advice%></li>
                 </ul></label>
         </fieldset>
         </div>
