@@ -91,7 +91,7 @@ public class Diagnosis extends HttpServlet {
         o.showDisease();
         Cookie c=new Cookie("dis",o.disease);
         Cookie d=new Cookie("adv",o.advice);
-        out.println("<b>"+o.disease+"</b>");
+        //out.println("<b>"+o.disease+"</b>");
         response.addCookie(c);
         response.addCookie(d);
         request.getRequestDispatcher("Result.jsp").include(request, response);
