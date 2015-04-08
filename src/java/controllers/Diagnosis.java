@@ -24,8 +24,8 @@ public class Diagnosis extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     *
-     * @param request servlet request
+     *     
+* @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
@@ -55,7 +55,6 @@ public class Diagnosis extends HttpServlet {
             a[15] = request.getParameter("p");
             a[16] = request.getParameter("q");
             a[17] = request.getParameter("r");
-
             for (int i = 0; i < a.length; i++) {
                 if (a[i] == null) {
                     System.out.println("first if" + a[i]);
@@ -77,7 +76,7 @@ public class Diagnosis extends HttpServlet {
             e.printStackTrace();
         }
         Array a = new Array();
-        //a.addDisease();
+//a.addDisease();
         a.get();
         UserInput ui = new UserInput();
         ui.get();
@@ -90,12 +89,12 @@ public class Diagnosis extends HttpServlet {
         out.println("You have been diagnosed with typhoid");
         request.getRequestDispatcher("Result.jsp").include(request, response);
     }
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
+     *     
+* @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
@@ -108,8 +107,8 @@ public class Diagnosis extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
+     *     
+* @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
@@ -122,12 +121,11 @@ public class Diagnosis extends HttpServlet {
 
     /**
      * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
+     *     
+* @return a String containing servlet description
      */
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

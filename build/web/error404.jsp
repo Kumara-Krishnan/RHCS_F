@@ -1,9 +1,8 @@
-<%-- 
-    Document   : login
-    Created on : Feb 14, 2015, 9:23:32 PM
-    Author     : Kabilan
+<%--
+Document : login
+Created on : Feb 14, 2015, 9:23:32 PM
+Author : Kabilan
 --%>
-
 <%@page isErrorPage="true"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,10 +25,8 @@
                 a.src = g;
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
             ga('create', 'UA-60757234-1', 'auto');
             ga('send', 'pageview');
-
         </script>
     </head>
     <script>
@@ -44,14 +41,10 @@
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
         ga('create', 'UA-60757234-1', 'auto');
         ga('send', 'pageview');
-
     </script>
     <body>
-
-
         <div class="navbar navbar-inverse">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -63,7 +56,7 @@
             </div>
             <div class="navbar-collapse collapse navbar-inverse-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a  href="Home.jsp">Home</a></li>
+                    <li><a href="Home.jsp">Home</a></li>
                     <li><a href="Login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
                     <li><a href="Emergency.jsp">Emergency</a></li>
@@ -74,7 +67,6 @@
                 <form class="navbar-form navbar-left">
                     <input type="text" class="form-control col-lg-8" placeholder="Search">
                 </form>
-
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -88,14 +80,10 @@
                     </li>
                 </ul>
             </div>
-
         </div>
         <fieldset>
             <legend>Oops :( That's a 404... Try some other page...</legend>
         </fieldset>
-
-
-
         <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
         <script>
@@ -109,6 +97,6 @@
                 return false;
             });
         });
-        </script>  
+        </script>
     </body>
 </html>
