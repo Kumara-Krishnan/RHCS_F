@@ -18,11 +18,19 @@
         return;
     }
         String email = "";
+        String disease="";
+        String advice="";
     Cookie c[] = request.getCookies();
-    for (Cookie d : c) {
-        System.out.println(d.getName());
-        if (d.getName().equals("user")) {
-            email = d.getValue();
+    for (Cookie f : c) {
+        System.out.println(f.getName());
+        if (f.getName().equals("user")) {
+            email = f.getValue();
+        }
+        if(f.getName().equals("dis")){
+            disease=f.getValue();
+        }
+        if(f.getName().equals("adv")){
+            advice=f.getValue();
         }
     }
 %>
@@ -34,7 +42,7 @@
         <link rel="stylesheet" href="rescources/css/bootstrap.css" type="text/css"/>
         <link href="rescources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Error</title>
+        <title>Diagnosis Result</title>
         <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
@@ -88,7 +96,7 @@
                     <li><a href="Login.jsp">Login</a></li>
                     <li><a href="Diagnosis.jsp">Diagnosis</a></li>
                     <li><a href="Emergency.jsp">Emergency</a></li>
-                    <li><a href="Reg.jsp">Register</a></li>
+                    <li><a href="UserDetails.jsp"><%=email%></a></li>
                     <li><a href="Announcements.jsp">Announcements</a></li>
                     <li><a href="Data.jsp">Data View</a></li>
                 </ul>
@@ -114,7 +122,7 @@
         <div style="padding:5px;" class="jumbotron col-md-5 col-lg-offset-1">
         
             <h3>Diagnosis Result</h3>
-            <label><h3>You have been diagnosed with Typhoid. <br>Contact a general physician for medical advice.</h3><br><a href="emergency.jsp"  class="btn btn-warning btn-lg">Emergency</a></label>
+            <label><h3>You have been diagnosed with <%=disease%> <br>Contact a general physician for medical advice.</h3><br><a href="emergency.jsp"  class="btn btn-warning btn-lg">Emergency</a></label>
             <br><h2>Video Conference With Physician.</h2><br>  <button class="btn btn-success btn-lg" id="startButton">Start</button>
       <button class="btn btn-primary btn-lg" id="callButton">Call</button>
       <button class="btn btn-danger btn-lg" id="hangupButton">Hang Up</button><br>
@@ -131,17 +139,11 @@
             <legend>Medical Advice</legend>
             <label>Please follow these instructions carefully:
                 <ul>
-                    <li>Consult general physician immediately!!</li>
-                    <li>Drink plenty of fluids.</li>
-                    <li>Avoid hot and spicy food.</li>
-                    <li>Do not take excessive paracetamol.</li>
-                    
                     
                 </ul>
                Recommended Medication
                 <ul>
-                    <li>Azithromycin</li>
-                    <li>Ceftriaxone</li>
+                    <li><%=advice%></li>
                 </ul></label>
         </fieldset>
         </div>

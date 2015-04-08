@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,7 +60,7 @@ public class Diagnosis extends HttpServlet {
                 if (a[i] == null) {
                     System.out.println("first if" + a[i]);
                     b[i] = 0.0;
-                } else {
+                } else if(a[i].equals("on")){
                     System.out.println(a[i]);
                     b[i] = 1.0;
                 }
@@ -78,15 +79,20 @@ public class Diagnosis extends HttpServlet {
         Array a = new Array();
 //a.addDisease();
         a.get();
+        //out.println("<b>training input"+Array.TRAIN_INPUT[0][5]+"  "+Array.TRAIN_IDEAL[0][0]+" training ideal</b>");
         UserInput ui = new UserInput();
         ui.get();
+        //out.println("<b>user input"+UserInput.USER_INPUT[0]+"</b>");
         NeuralNetwork nn = new NeuralNetwork();
         nn.test();
         Output o = new Output();
         o.output();
         o.round();
         o.showDisease();
-        out.println("You have been diagnosed with typhoid");
+        Cookie c=new Cookie("dis",o.disease);
+        Cookie d=new Cookie("adv",o.advice);
+        response.addCookie(c);
+        response.addCookie(d);
         request.getRequestDispatcher("Result.jsp").include(request, response);
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

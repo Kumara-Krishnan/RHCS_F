@@ -72,24 +72,24 @@ public class Array {
             s = con.createStatement();
             rs = s.executeQuery("select * from traininginput");
             while (rs.next()) {
-                TRAIN_INPUT[i][0] = rs.getDouble("ONE");
-                TRAIN_INPUT[i][1] = rs.getDouble("TWO");
-                TRAIN_INPUT[i][2] = rs.getDouble("THREE");
-                TRAIN_INPUT[i][3] = rs.getDouble("FOUR");
-                TRAIN_INPUT[i][4] = rs.getDouble("FIVE");
-                TRAIN_INPUT[i][5] = rs.getDouble("SIX");
-                TRAIN_INPUT[i][6] = rs.getDouble("SEVEN");
-                TRAIN_INPUT[i][7] = rs.getDouble("EIGHT");
-                TRAIN_INPUT[i][8] = rs.getDouble("NINE");
-                TRAIN_INPUT[i][9] = rs.getDouble("TEN");
-                TRAIN_INPUT[i][10] = rs.getDouble("ELEVEN");
-                TRAIN_INPUT[i][11] = rs.getDouble("TWELVE");
-                TRAIN_INPUT[i][12] = rs.getDouble("THIRTEEN");
-                TRAIN_INPUT[i][13] = rs.getDouble("FOURTEEN");
-                TRAIN_INPUT[i][14] = rs.getDouble("FIFTEEN");
-                TRAIN_INPUT[i][15] = rs.getDouble("SIXTEEN");
-                TRAIN_INPUT[i][16] = rs.getDouble("SEVENTEEN");
-                TRAIN_INPUT[i][17] = rs.getDouble("EIGHTEEN");
+                TRAIN_INPUT[i][0] = rs.getDouble("one");
+                TRAIN_INPUT[i][1] = rs.getDouble("two");
+                TRAIN_INPUT[i][2] = rs.getDouble("three");
+                TRAIN_INPUT[i][3] = rs.getDouble("four");
+                TRAIN_INPUT[i][4] = rs.getDouble("five");
+                TRAIN_INPUT[i][5] = rs.getDouble("six");
+                TRAIN_INPUT[i][6] = rs.getDouble("seven");
+                TRAIN_INPUT[i][7] = rs.getDouble("eight");
+                TRAIN_INPUT[i][8] = rs.getDouble("nine");
+                TRAIN_INPUT[i][9] = rs.getDouble("ten");
+                TRAIN_INPUT[i][10] = rs.getDouble("eleven");
+                TRAIN_INPUT[i][11] = rs.getDouble("twelve");
+                TRAIN_INPUT[i][12] = rs.getDouble("thirteen");
+                TRAIN_INPUT[i][13] = rs.getDouble("fourteen");
+                TRAIN_INPUT[i][14] = rs.getDouble("fifteen");
+                TRAIN_INPUT[i][15] = rs.getDouble("sixteen");
+                TRAIN_INPUT[i][16] = rs.getDouble("seventeen");
+                TRAIN_INPUT[i][17] = rs.getDouble("eighteen");
 
                 i++;
 

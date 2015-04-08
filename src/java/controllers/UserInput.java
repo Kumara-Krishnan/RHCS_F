@@ -27,24 +27,24 @@ public class UserInput {
             s = con.createStatement();
             rs = s.executeQuery("select * from userinput");
             while (rs.next()) {
-                USER_INPUT[0] = rs.getInt("a");
-                USER_INPUT[1] = rs.getInt("b");
-                USER_INPUT[2] = rs.getInt("c");
-                USER_INPUT[3] = rs.getInt("d");
-                USER_INPUT[4] = rs.getInt("e");
-                USER_INPUT[5] = rs.getInt("f");
-                USER_INPUT[6] = rs.getInt("g");
-                USER_INPUT[7] = rs.getInt("h");
-                USER_INPUT[8] = rs.getInt("i");
-                USER_INPUT[9] = rs.getInt("j");
-                USER_INPUT[10] = rs.getInt("k");
-                USER_INPUT[11] = rs.getInt("l");
-                USER_INPUT[12] = rs.getInt("m");
-                USER_INPUT[13] = rs.getInt("n");
-                USER_INPUT[14] = rs.getInt("o");
-                USER_INPUT[15] = rs.getInt("p");
-                USER_INPUT[16] = rs.getInt("q");
-                USER_INPUT[17] = rs.getInt("r");
+                USER_INPUT[0] = rs.getDouble("a");
+                USER_INPUT[1] = rs.getDouble("b");
+                USER_INPUT[2] = rs.getDouble("c");
+                USER_INPUT[3] = rs.getDouble("d");
+                USER_INPUT[4] = rs.getDouble("e");
+                USER_INPUT[5] = rs.getDouble("f");
+                USER_INPUT[6] = rs.getDouble("g");
+                USER_INPUT[7] = rs.getDouble("h");
+                USER_INPUT[8] = rs.getDouble("i");
+                USER_INPUT[9] = rs.getDouble("j");
+                USER_INPUT[10] = rs.getDouble("k");
+                USER_INPUT[11] = rs.getDouble("l");
+                USER_INPUT[12] = rs.getDouble("m");
+                USER_INPUT[13] = rs.getDouble("n");
+                USER_INPUT[14] = rs.getDouble("o");
+                USER_INPUT[15] = rs.getDouble("p");
+                USER_INPUT[16] = rs.getDouble("q");
+                USER_INPUT[17] = rs.getDouble("r");
             }
 
             PreparedStatement ps = con.prepareStatement("truncate table userinput");
