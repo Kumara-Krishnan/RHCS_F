@@ -9,6 +9,10 @@
         <servlet-class>controllers.Register</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>pie1</servlet-name>
+        <servlet-class>controllers.pie1</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LogOut</servlet-name>
         <servlet-class>controllers.LogOut</servlet-class>
     </servlet>
@@ -27,6 +31,10 @@
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pie1</servlet-name>
+        <url-pattern>/pie1.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogOut</servlet-name>
@@ -51,5 +59,9 @@
     <error-page>
         <error-code>404</error-code>
         <location>/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/errorpage.jsp</location>
     </error-page>
 </web-app>
