@@ -111,3 +111,150 @@
     </body>
 </html>
 
+
+/*
+//index.jsp
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://getbootstrap.com/examples/signin/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Cognizant Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./Signin Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<%String s=(String)request.getAttribute("attr");
+if(s==null){
+	request.setAttribute("attr","none");
+}
+String j=(String)request.getAttribute("type");
+if(j==null){
+	request.setAttribute("type","danger");
+}
+%>
+  <body>
+    <div class="container">
+      <form class="form-signin" method="POST" action="Login.do">
+        <h2 class="form-signin-heading">One Cognizant Login</h2>
+  <div style="display: ${attr}" class="alert alert-${type}">
+    ${values}
+  </div>
+        <label  class="sr-only">FirstName</label>
+        <input type="text" name="fName" id="name" class="form-control" placeholder="First Name"  autofocus="">
+        <label class="sr-only">Last Name</label>
+        <input type="text" name="lName" id="name" class="form-control" placeholder="Last Name" >
+        <label class="checkbox">Country</label>
+		<select class="form-control">
+		  <option name="country" value="India">India</option>
+		  <option name="country" value="United Kingdom">United Kingdom</option>
+		  <option name="country" value="The United States">The United States</option>
+		  <option name="country" value="Brazil">Brazil</option>
+		  <option name="country" value="China">China</option>
+		</select>
+        <label class="checkbox">Languages Known</label>
+		<div class="checkbox-inline">
+		  <label><input type="checkbox" name="lang" value="English">English</label>
+		</div>
+		<div class="checkbox-inline">
+		  <label><input type="checkbox" name="lang" value="Telugu">Telugu</label>
+		</div>
+		<div class="checkbox-inline">
+		  <label><input type="checkbox" name="lang" value="Tamil">Tamil</label>
+		</div>
+		<label class="radio">Gender</label>
+        <div class="radio-inline">
+		  <label><input type="radio" checked="checked" name="gender" value="Male">Male</label>
+		</div>
+		<div class="radio-inline">
+		  <label><input type="radio" name="gender" value="Female">Female</label>
+		</div>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-danger btn-block" type="submit">Reset</button>
+      </form>
+    </div> <!-- /container -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Signin Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
+
+
+
+
+//Login.java
+package controllers;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Login
+ */
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String fName=request.getParameter("fName");
+		System.out.println(fName);
+		String lName=request.getParameter("lName");
+		String country=request.getParameter("country");
+		String [] lang=request.getParameterValues("lang");
+		String gender=request.getParameter("gender");
+		if(!(fName.isEmpty()||lName.isEmpty())){
+			request.setAttribute("attr", "visible");
+			System.out.println("success");
+			request.setAttribute("values", "Registration Success!!");
+			request.setAttribute("type", "success");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("values", "No parameters can be Null (or) empty");
+				request.setAttribute("type", "danger");
+				request.setAttribute("attr", "visible");
+				request.getRequestDispatcher("index.jsp").forward(request, response);			
+			}
+	}
+
+}
+*/
